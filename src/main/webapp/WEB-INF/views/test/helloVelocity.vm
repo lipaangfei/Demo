@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" pageEncoding="UTF-8">
+    <title>I'm helloVelocity</title>
+</head>
+
+<body>
+<div align="center">
+    <h3>Hello Velocity</h3></br>
+
+    #set($greet = "hello")
+    $greet $name Adobe
+    <br>
+    #foreach($i in $list)
+        $i
+    #end
+
+    #if($name)
+        <strong>$name</strong>
+        </br>
+    #end
+
+    #set($array=[1,2,3])
+    #foreach($num in $array)
+        $num $foreach.count
+    #end
+
+</div>
+</body>
+</html>

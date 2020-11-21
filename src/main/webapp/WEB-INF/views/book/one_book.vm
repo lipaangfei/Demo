@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>add or edit a book</title>
+</head>
+<script type="text/javascript" src='/public/js/jquery-3.1.1.js'></script>
+<script type="text/javascript">
+    function checkConform(){
+        return window.confirm("确认提交?")
+    }
+</script>
+
+
+#if ($book.status==0)
+    #set($status="正常在库")
+#else
+    #set($status="已出库")
+#end
+#if ($type=="add")
+    #set($url="./add")
+#elseif ($type=="update")
+    #set($url="/book/$!{book.id}/update")
+#end
+
+<body>
+    <div align="center">
+        #if($type=='add')
+            <h3>添加图书</h3>
+        #elseif($type=='update')
+            <h3>修改图书</h3>
+        #end
+        <form id="dataForm" action="$!url" method="post" onsubmit="return checkConform()">
+            <table border="0" cellpadding="10">
+                #if($type=='update')
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text" name="id" value="$!book.id" disabled="true"></td>
+                    </tr>
+                #end
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" value="$!book.name"></td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td><input type="text" name="author" value="$!book.author"></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type="number" name="price" step="0.01" value="$!book.price"></td>
+                </tr>
+
+                #if($type=="add")
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" id="add" value="添加"></td>
+                    </tr>
+                #elseif($type=="update")
+                    <tr>
+                        <td>Status</td>
+                        <td>$!status</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" id="save" value="保存"></td>
+                    </tr>
+                #end
+            </table>
+        </form>
+    </div>
+</body>
+</html>

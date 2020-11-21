@@ -1,0 +1,2 @@
+[2020-11-04 15:17:09.239]INFO :Closing Root WebApplicationContext: startup date [Mon Nov 02 20:25:56 CST 2020]; root of context hierarchy
+[2020-11-04 15:17:09.239]==>org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:862)[Thread-2]

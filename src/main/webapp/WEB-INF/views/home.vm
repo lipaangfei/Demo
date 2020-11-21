@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+</head>
+<body>
+    <div align="center">
+        <h2>欢迎来到图书管理系统</h2>
+        <h4 id="user_status"></h4>
+        <table cellpadding="10">
+            <tr>
+                <td><a href="/login">登录</td>
+                <td><a href="/register">注册</td>
+            </tr>
+        </table>
+
+        </table>
+    </div>
+</body>
+</html>

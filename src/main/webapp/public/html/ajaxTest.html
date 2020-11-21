@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ajax</title>
+</head>
+<script type="text/javascript" src='/public/js/jquery-3.1.1.js'></script>
+<script type="text/javascript">
+  function savePro() {
+ var saveData = {"id":233}; //发送给服务器的JSON
+ $.ajax({
+  type : "POST",
+  url : "/testJson",
+  data:JSON.stringify(saveData),
+  contentType:"application/json",  //发送至服务器的类型
+  //dataType : "application/json",     //预期服务器返回类型 他会根据返回的类型做链式解析
+  complete: function(){
+    console.log("complete");
+
+  },
+  error: function(e,xhr,opt){
+    alert("Error requesting " + e + opt.url + ": " + xhr.status + " " + xhr.statusText);
+  },
+  success: function(data){
+    console.log("success");
+    alert(data.toString());
+  }
+})
+}
+
+
+</script>
+<body>
+  <div>
+   <input type="button" value="保存" onclick="savePro()"/>
+ </div>
+</body>
+</html>

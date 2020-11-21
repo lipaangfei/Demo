@@ -1,0 +1,224 @@
+[2020-11-13 15:14:09.678]DEBUG:GET http://localhost:8082/book/show-all-books
+[2020-11-13 15:14:09.678]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-17]
+[2020-11-13 15:14:09.682]DEBUG:['/book/show-all-books'] matched(1): ''
+[2020-11-13 15:14:09.682]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-17]
+[2020-11-13 15:14:09.682]DEBUG:['/book/show-all-books'] matched(2): '/book'
+[2020-11-13 15:14:09.682]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-17]
+[2020-11-13 15:14:09.682]DEBUG:['/book/show-all-books'] matched(3): '/show-all-books'
+[2020-11-13 15:14:09.682]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-17]
+[2020-11-13 15:14:09.683]DEBUG:['/book/show-all-books'] matched over.
+[2020-11-13 15:14:09.683]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:191)[qtp831404354-17]
+[2020-11-13 15:14:09.683]DEBUG:Score of net.paoding.rose.web.impl.thread.LinkedEngine:1
+[2020-11-13 15:14:09.683]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:292)[qtp831404354-17]
+[2020-11-13 15:14:09.683]DEBUG:Engine selected:com.nowcoder.code.controllers.BookController#getBookListRequest
+[2020-11-13 15:14:09.683]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:312)[qtp831404354-17]
+[2020-11-13 15:14:09.683]DEBUG:mapped '/book/show-all-books' to com.nowcoder.code.controllers.BookController#getBookListRequest
+[2020-11-13 15:14:09.683]==>net.paoding.rose.web.impl.thread.Rose.innerStart(Rose.java:174)[qtp831404354-17]
+[2020-11-13 15:14:09.684]DEBUG:set request.characterEncoding by default:UTF-8
+[2020-11-13 15:14:09.684]==>net.paoding.rose.web.impl.thread.RootEngine.execute(RootEngine.java:100)[qtp831404354-17]
+[2020-11-13 15:14:09.684]DEBUG:add attribute to model: invocation=/book/show-all-books
+[2020-11-13 15:14:09.684]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:09.684]DEBUG:add attribute to model: ctxpath=
+[2020-11-13 15:14:09.684]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:09.684]DEBUG:add attribute to model: org.springframework.validation.BindingResult.parameterBindingResult=net.paoding.rose.web.impl.validation.ParameterBindingResult: 0 errors
+[2020-11-13 15:14:09.684]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:09.684]DEBUG:Resolves parameter Invocation using net.paoding.rose.web.paramresolver.ResolverFactoryImpl$InvocationResolver
+[2020-11-13 15:14:09.684]==>net.paoding.rose.web.paramresolver.MethodParameterResolver.resolve(MethodParameterResolver.java:93)[qtp831404354-17]
+[2020-11-13 15:14:09.685]DEBUG:invoking com.nowcoder.code.dao.UserDAO#getLoginTokerById
+[2020-11-13 15:14:09.685]==>net.paoding.rose.jade.context.JadeInvocationHandler.invoke(JadeInvocationHandler.java:99)[qtp831404354-17]
+[2020-11-13 15:14:09.686]DEBUG:invoking com.nowcoder.code.dao.UserDAO#getLoginTokerById
+	sql: select login_token from user where id=:1
+	parameters: :1='2'  
+[2020-11-13 15:14:09.686]==>net.paoding.rose.jade.context.JadeInvocationHandler.invoke(JadeInvocationHandler.java:128)[qtp831404354-17]
+[2020-11-13 15:14:09.686]DEBUG:EXQL pattern executing:
+    origin: select login_token from user where id=:1
+    result: select login_token from user where id=?
+    params: [2]
+[2020-11-13 15:14:09.686]==>net.paoding.rose.jade.statement.expression.impl.ExqlPatternImpl.execute(ExqlPatternImpl.java:100)[qtp831404354-17]
+[2020-11-13 15:14:09.702]INFO :cost 16ms: com.nowcoder.code.dao.UserDAO#getLoginTokerById
+	sql: select login_token from user where id=:1
+	parameters: :1='2'  
+[2020-11-13 15:14:09.702]==>net.paoding.rose.jade.context.JadeInvocationHandler.invoke(JadeInvocationHandler.java:141)[qtp831404354-17]
+[2020-11-13 15:14:09.703]DEBUG:invoking com.nowcoder.code.dao.BookDAO#getBookList
+[2020-11-13 15:14:09.703]==>net.paoding.rose.jade.context.JadeInvocationHandler.invoke(JadeInvocationHandler.java:99)[qtp831404354-17]
+[2020-11-13 15:14:09.703]DEBUG:invoking com.nowcoder.code.dao.BookDAO#getBookList
+	sql: select * from book
+	parameters: 
+[2020-11-13 15:14:09.703]==>net.paoding.rose.jade.context.JadeInvocationHandler.invoke(JadeInvocationHandler.java:128)[qtp831404354-17]
+[2020-11-13 15:14:09.703]DEBUG:EXQL pattern executing:
+    origin: select * from book
+    result: select * from book
+    params: []
+[2020-11-13 15:14:09.703]==>net.paoding.rose.jade.statement.expression.impl.ExqlPatternImpl.execute(ExqlPatternImpl.java:100)[qtp831404354-17]
+[2020-11-13 15:14:09.705]DEBUG:Mapping column 'id' to property 'id' of type int
+[2020-11-13 15:14:09.705]==>net.paoding.rose.jade.rowmapper.BeanPropertyRowMapper.mapRow(BeanPropertyRowMapper.java:207)[qtp831404354-17]
+[2020-11-13 15:14:09.706]DEBUG:Mapping column 'name' to property 'name' of type class java.lang.String
+[2020-11-13 15:14:09.706]==>net.paoding.rose.jade.rowmapper.BeanPropertyRowMapper.mapRow(BeanPropertyRowMapper.java:207)[qtp831404354-17]
+[2020-11-13 15:14:09.706]DEBUG:Mapping column 'author' to property 'author' of type class java.lang.String
+[2020-11-13 15:14:09.706]==>net.paoding.rose.jade.rowmapper.BeanPropertyRowMapper.mapRow(BeanPropertyRowMapper.java:207)[qtp831404354-17]
+[2020-11-13 15:14:09.707]DEBUG:Mapping column 'price' to property 'price' of type double
+[2020-11-13 15:14:09.707]==>net.paoding.rose.jade.rowmapper.BeanPropertyRowMapper.mapRow(BeanPropertyRowMapper.java:207)[qtp831404354-17]
+[2020-11-13 15:14:09.707]DEBUG:Mapping column 'status' to property 'status' of type int
+[2020-11-13 15:14:09.707]==>net.paoding.rose.jade.rowmapper.BeanPropertyRowMapper.mapRow(BeanPropertyRowMapper.java:207)[qtp831404354-17]
+[2020-11-13 15:14:09.711]INFO :cost 7ms: com.nowcoder.code.dao.BookDAO#getBookList
+	sql: select * from book
+	parameters: 
+[2020-11-13 15:14:09.711]==>net.paoding.rose.jade.context.JadeInvocationHandler.invoke(JadeInvocationHandler.java:141)[qtp831404354-17]
+[2020-11-13 15:14:09.712]DEBUG:add attribute to model: bookList=[BookInfo{id=3, name='为什么从Google离职', author='项羽', price=233.0, status=-1}, BookInfo{id=4, name='如来神掌', author='周星驰', price=5.0, status=0}, BookInfo{id=6, name='rose insprie', author='hhhh', price=18.18, status=0}, BookInfo{id=27, name='nowcoder home', author='wjj', price=0.0, status=0}, BookInfo{id=28, name='rose', author='nick', price=20.0, status=0}, BookInfo{id=29, name='1', author='1', price=1.0, status=0}, BookInfo{id=30, name='C++', author='Nick', price=100.0, status=0}, BookInfo{id=31, name='a', author='a', price=1.0, status=-1}, BookInfo{id=32, name='aaa', author='aa', price=111.0, status=-1}, BookInfo{id=33, name='Java', author='nickwong', price=0.2, status=0}, BookInfo{id=34, name='beijing java', author='chao', price=2.0, status=0}, BookInfo{id=36, name='beijing java', author='chao', price=2.0, status=0}, BookInfo{id=38, name='update', author='wjj', price=188.88, status=0}, BookInfo{id=39, name='doubi primer', author='wjj', price=188.88, status=0}, BookInfo{id=40, name='doubi primer', author='wjj', price=188.88, status=0}, BookInfo{id=42, name='adaPlus', author='wjj', price=100.0, status=0}, BookInfo{id=44, name='Python Programming', author='Snake', price=45.0, status=0}, BookInfo{id=45, name='CC', author='Tom', price=102.0, status=0}, BookInfo{id=46, name='CC', author='Tom', price=100.0, status=0}, BookInfo{id=47, name='C#', author='MS', price=120.0, status=0}, BookInfo{id=49, name='C#', author='MS', price=78.0, status=0}, BookInfo{id=50, name='CSAPP', author='Lee', price=156.0, status=0}, BookInfo{id=51, name='Cloud Computing', author='Tom', price=100.0, status=0}, BookInfo{id=52, name='Cloud Computing', author='James', price=190.0, status=0}]
+[2020-11-13 15:14:09.712]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:09.712]DEBUG:add attribute to model: email=10086@163.com
+[2020-11-13 15:14:09.712]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:09.712]DEBUG:interceptor[loginRequired] do round and return 'book/book_list'
+[2020-11-13 15:14:09.712]==>net.paoding.rose.web.impl.thread.ActionEngine$InvocationChainImpl.doNext(ActionEngine.java:471)[qtp831404354-17]
+[2020-11-13 15:14:09.713]DEBUG:parset instruction:java.lang.String: 'book/book_list'
+[2020-11-13 15:14:09.713]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-17]
+[2020-11-13 15:14:09.713]DEBUG:parset instruction:net.paoding.rose.web.instruction.InstructionExecutorImpl$StringInstruction: ''
+[2020-11-13 15:14:09.713]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-17]
+[2020-11-13 15:14:09.713]DEBUG:resolving view name = 'book/book_list'
+[2020-11-13 15:14:09.713]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:103)[qtp831404354-17]
+[2020-11-13 15:14:09.713]DEBUG:found '/WEB-INF/views/book/book_list.vm' for viewName 'book/book_list'
+[2020-11-13 15:14:09.713]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:145)[qtp831404354-17]
+[2020-11-13 15:14:09.714]DEBUG:to get velocity view resolver.
+[2020-11-13 15:14:09.714]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.getSpringViewResolver(ViewDispatcherImpl.java:95)[qtp831404354-17]
+[2020-11-13 15:14:09.714]DEBUG:found viewResolver 'org.springframework.web.servlet.view.velocity.VelocityViewResolver@5c3b50f1' for viewPath '/WEB-INF/views/book/book_list.vm'
+[2020-11-13 15:14:09.714]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.resolveViewName(ViewDispatcherImpl.java:85)[qtp831404354-17]
+[2020-11-13 15:14:09.714]DEBUG:add attribute to model: roseInvocation=/book/show-all-books
+[2020-11-13 15:14:09.714]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:09.755]DEBUG:GET http://localhost:8082/public/js/jquery-3.1.1.js
+[2020-11-13 15:14:09.755]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-16]
+[2020-11-13 15:14:09.755]DEBUG:not rose uri: /public/js/jquery-3.1.1.js
+[2020-11-13 15:14:09.755]==>net.paoding.rose.RoseFilter.notMatched(RoseFilter.java:565)[qtp831404354-16]
+[2020-11-13 15:14:26.254]DEBUG:GET http://localhost:8082/logout
+[2020-11-13 15:14:26.254]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:['/logout'] matched(1): ''
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:['/logout'] matched(2): '/logout'
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:['/logout'] matched over.
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:191)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:Score of net.paoding.rose.web.impl.thread.LinkedEngine:1
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:292)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:Engine selected:com.nowcoder.code.controllers.LoginController#logoutRequest
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:312)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:mapped '/logout' to com.nowcoder.code.controllers.LoginController#logoutRequest
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.thread.Rose.innerStart(Rose.java:174)[qtp831404354-21]
+[2020-11-13 15:14:26.255]DEBUG:set request.characterEncoding by default:UTF-8
+[2020-11-13 15:14:26.255]==>net.paoding.rose.web.impl.thread.RootEngine.execute(RootEngine.java:100)[qtp831404354-21]
+[2020-11-13 15:14:26.256]DEBUG:add attribute to model: invocation=/logout
+[2020-11-13 15:14:26.256]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-21]
+[2020-11-13 15:14:26.256]DEBUG:add attribute to model: ctxpath=
+[2020-11-13 15:14:26.256]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-21]
+[2020-11-13 15:14:26.256]DEBUG:add attribute to model: org.springframework.validation.BindingResult.parameterBindingResult=net.paoding.rose.web.impl.validation.ParameterBindingResult: 0 errors
+[2020-11-13 15:14:26.256]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-21]
+[2020-11-13 15:14:26.256]DEBUG:Resolves parameter Invocation using net.paoding.rose.web.paramresolver.ResolverFactoryImpl$InvocationResolver
+[2020-11-13 15:14:26.256]==>net.paoding.rose.web.paramresolver.MethodParameterResolver.resolve(MethodParameterResolver.java:93)[qtp831404354-21]
+[2020-11-13 15:14:26.257]DEBUG:parset instruction:java.lang.String: 'login/logout_redir'
+[2020-11-13 15:14:26.257]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-21]
+[2020-11-13 15:14:26.257]DEBUG:parset instruction:net.paoding.rose.web.instruction.InstructionExecutorImpl$StringInstruction: ''
+[2020-11-13 15:14:26.257]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-21]
+[2020-11-13 15:14:26.257]DEBUG:resolving view name = 'login/logout_redir'
+[2020-11-13 15:14:26.257]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:103)[qtp831404354-21]
+[2020-11-13 15:14:26.257]DEBUG:to find viewPath by viewName 'login/logout_redir'
+[2020-11-13 15:14:26.257]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPathFromCache(ViewInstruction.java:168)[qtp831404354-21]
+[2020-11-13 15:14:26.258]DEBUG:found directory /Users/lipengfei/MyProjects/Demo/src/main/webapp/WEB-INF/views/login
+[2020-11-13 15:14:26.258]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPathFromCache(ViewInstruction.java:209)[qtp831404354-21]
+[2020-11-13 15:14:26.262]DEBUG:found '/WEB-INF/views/login/logout_redir.vm' for viewName 'login/logout_redir'
+[2020-11-13 15:14:26.262]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:145)[qtp831404354-21]
+[2020-11-13 15:14:26.262]DEBUG:to get velocity view resolver.
+[2020-11-13 15:14:26.262]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.getSpringViewResolver(ViewDispatcherImpl.java:95)[qtp831404354-21]
+[2020-11-13 15:14:26.262]DEBUG:found viewResolver 'org.springframework.web.servlet.view.velocity.VelocityViewResolver@5c3b50f1' for viewPath '/WEB-INF/views/login/logout_redir.vm'
+[2020-11-13 15:14:26.262]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.resolveViewName(ViewDispatcherImpl.java:85)[qtp831404354-21]
+[2020-11-13 15:14:26.267]DEBUG:add attribute to model: roseInvocation=/logout
+[2020-11-13 15:14:26.267]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-21]
+[2020-11-13 15:14:27.315]DEBUG:GET http://localhost:8082/
+[2020-11-13 15:14:27.315]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-17]
+[2020-11-13 15:14:27.315]DEBUG:[''] matched(1): ''
+[2020-11-13 15:14:27.315]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:[''] matched over.
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:191)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:Score of net.paoding.rose.web.impl.thread.LinkedEngine:1
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:292)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:Score of net.paoding.rose.web.impl.thread.LinkedEngine:1
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:292)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:Engine selected:com.nowcoder.code.controllers.HomeController#entry
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:312)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:mapped '/' to com.nowcoder.code.controllers.HomeController#entry
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.impl.thread.Rose.innerStart(Rose.java:174)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:set request.characterEncoding by default:UTF-8
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.impl.thread.RootEngine.execute(RootEngine.java:100)[qtp831404354-17]
+[2020-11-13 15:14:27.316]DEBUG:add attribute to model: invocation=/
+[2020-11-13 15:14:27.316]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:27.317]DEBUG:add attribute to model: ctxpath=
+[2020-11-13 15:14:27.317]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:27.317]DEBUG:add attribute to model: org.springframework.validation.BindingResult.parameterBindingResult=net.paoding.rose.web.impl.validation.ParameterBindingResult: 0 errors
+[2020-11-13 15:14:27.317]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:27.317]DEBUG:parset instruction:java.lang.String: 'home'
+[2020-11-13 15:14:27.317]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-17]
+[2020-11-13 15:14:27.317]DEBUG:parset instruction:net.paoding.rose.web.instruction.InstructionExecutorImpl$StringInstruction: ''
+[2020-11-13 15:14:27.317]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-17]
+[2020-11-13 15:14:27.317]DEBUG:resolving view name = 'home'
+[2020-11-13 15:14:27.317]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:103)[qtp831404354-17]
+[2020-11-13 15:14:27.317]DEBUG:found '/WEB-INF/views/home.vm' for viewName 'home'
+[2020-11-13 15:14:27.317]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:145)[qtp831404354-17]
+[2020-11-13 15:14:27.318]DEBUG:to get velocity view resolver.
+[2020-11-13 15:14:27.318]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.getSpringViewResolver(ViewDispatcherImpl.java:95)[qtp831404354-17]
+[2020-11-13 15:14:27.318]DEBUG:found viewResolver 'org.springframework.web.servlet.view.velocity.VelocityViewResolver@5c3b50f1' for viewPath '/WEB-INF/views/home.vm'
+[2020-11-13 15:14:27.318]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.resolveViewName(ViewDispatcherImpl.java:85)[qtp831404354-17]
+[2020-11-13 15:14:27.318]DEBUG:add attribute to model: roseInvocation=/
+[2020-11-13 15:14:27.318]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-17]
+[2020-11-13 15:14:29.328]DEBUG:GET http://localhost:8082/register
+[2020-11-13 15:14:29.328]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-16]
+[2020-11-13 15:14:29.328]DEBUG:['/register'] matched(1): ''
+[2020-11-13 15:14:29.328]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:['/register'] matched(2): '/register'
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:['/register'] matched over.
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:191)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:Score of net.paoding.rose.web.impl.thread.LinkedEngine:1
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:292)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:Engine selected:com.nowcoder.code.controllers.RegisterController#registerRequest
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.impl.thread.Rose.select(Rose.java:312)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:mapped '/register' to com.nowcoder.code.controllers.RegisterController#registerRequest
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.impl.thread.Rose.innerStart(Rose.java:174)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:set request.characterEncoding by default:UTF-8
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.impl.thread.RootEngine.execute(RootEngine.java:100)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:add attribute to model: invocation=/register
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-16]
+[2020-11-13 15:14:29.329]DEBUG:add attribute to model: ctxpath=
+[2020-11-13 15:14:29.329]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-16]
+[2020-11-13 15:14:29.330]DEBUG:add attribute to model: org.springframework.validation.BindingResult.parameterBindingResult=net.paoding.rose.web.impl.validation.ParameterBindingResult: 0 errors
+[2020-11-13 15:14:29.330]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-16]
+[2020-11-13 15:14:29.330]DEBUG:parset instruction:java.lang.String: 'register/register'
+[2020-11-13 15:14:29.330]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-16]
+[2020-11-13 15:14:29.330]DEBUG:parset instruction:net.paoding.rose.web.instruction.InstructionExecutorImpl$StringInstruction: ''
+[2020-11-13 15:14:29.330]==>net.paoding.rose.web.instruction.InstructionExecutorImpl.parseInstruction(InstructionExecutorImpl.java:84)[qtp831404354-16]
+[2020-11-13 15:14:29.330]DEBUG:resolving view name = 'register/register'
+[2020-11-13 15:14:29.330]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:103)[qtp831404354-16]
+[2020-11-13 15:14:29.330]DEBUG:to find viewPath by viewName 'register/register'
+[2020-11-13 15:14:29.330]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPathFromCache(ViewInstruction.java:168)[qtp831404354-16]
+[2020-11-13 15:14:29.331]DEBUG:found directory /Users/lipengfei/MyProjects/Demo/src/main/webapp/WEB-INF/views/register
+[2020-11-13 15:14:29.331]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPathFromCache(ViewInstruction.java:209)[qtp831404354-16]
+[2020-11-13 15:14:29.333]DEBUG:found '/WEB-INF/views/register/register.jsp' for viewName 'register/register'
+[2020-11-13 15:14:29.333]==>net.paoding.rose.web.instruction.ViewInstruction.getViewPath(ViewInstruction.java:145)[qtp831404354-16]
+[2020-11-13 15:14:29.333]DEBUG:to get jsp view resolver.
+[2020-11-13 15:14:29.333]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.getSpringViewResolver(ViewDispatcherImpl.java:107)[qtp831404354-16]
+[2020-11-13 15:14:29.333]DEBUG:found viewResolver 'org.springframework.web.servlet.view.InternalResourceViewResolver@39ecadc0' for viewPath '/WEB-INF/views/register/register.jsp'
+[2020-11-13 15:14:29.333]==>net.paoding.rose.web.impl.view.ViewDispatcherImpl.resolveViewName(ViewDispatcherImpl.java:85)[qtp831404354-16]
+[2020-11-13 15:14:29.334]DEBUG:add attribute to model: roseInvocation=/register
+[2020-11-13 15:14:29.334]==>net.paoding.rose.web.var.ModelImpl.add(ModelImpl.java:77)[qtp831404354-16]
+[2020-11-13 15:14:29.334]DEBUG:GET http://localhost:8082/WEB-INF/views/register/register.jsp
+[2020-11-13 15:14:29.334]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-16]
+[2020-11-13 15:14:29.334]DEBUG:not rose uri: /WEB-INF/views/register/register.jsp
+[2020-11-13 15:14:29.334]==>net.paoding.rose.RoseFilter.notMatched(RoseFilter.java:565)[qtp831404354-16]
+[2020-11-13 15:14:29.479]DEBUG:GET http://localhost:8082/captcha
+[2020-11-13 15:14:29.479]==>net.paoding.rose.RoseFilter.doFilter(RoseFilter.java:336)[qtp831404354-21]
+[2020-11-13 15:14:29.480]DEBUG:['/captcha'] matched(1): ''
+[2020-11-13 15:14:29.480]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:180)[qtp831404354-21]
+[2020-11-13 15:14:29.480]DEBUG:['/captcha'] not matched
+[2020-11-13 15:14:29.480]==>net.paoding.rose.web.impl.mapping.MappingNode.match(MappingNode.java:171)[qtp831404354-21]
+[2020-11-13 15:14:29.481]DEBUG:not rose uri: '/captcha'
+[2020-11-13 15:14:29.481]==>net.paoding.rose.web.impl.thread.Rose.innerStart(Rose.java:130)[qtp831404354-21]
+[2020-11-13 15:14:29.481]DEBUG:not rose uri: /captcha
+[2020-11-13 15:14:29.481]==>net.paoding.rose.RoseFilter.notMatched(RoseFilter.java:565)[qtp831404354-21]
+[2020-11-13 15:15:09.644]INFO :Closing Root WebApplicationContext: startup date [Thu Nov 12 17:02:53 CST 2020]; root of context hierarchy
+[2020-11-13 15:15:09.644]==>org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:862)[Thread-2]

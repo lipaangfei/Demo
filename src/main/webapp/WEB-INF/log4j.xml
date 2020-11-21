@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!--一直没用-->
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p:%m %n==> %l[%t]%n"/>
+        </layout>
+    </appender>
+
+    <!--rose业务的debug log-->
+    <appender name="roseLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/rose.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n[%d{yyyy-MM-dd HH:mm:ss.SSS}]==>%l[%t]%n"/>
+        </layout>
+    </appender>
+
+    <!--非spata业务的error log-->
+    <appender name="rootLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/root.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n[%d{yyyy-MM-dd HH:mm:ss.SSS}]==>%l[%t]%n"/>
+        </layout>
+    </appender>
+
+    <!--spata业务的error log-->
+    <appender name="spartaLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/sparta.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n[%d{yyyy-MM-dd HH:mm:ss.SSS}]==>%l[%t]%n"/>
+        </layout>
+    </appender>
+
+    <!--spata业务的info log-->
+    <appender name="spartaInfoLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/sparta_info.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n[%d{yyyy-MM-dd HH:mm:ss.SSS}]==>%l[%t]%n"/>
+        </layout>
+    </appender>
+
+
+    <!--judge 的log-->
+    <appender name="judgeLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/judge.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m==>%l%n"/>
+        </layout>
+    </appender>
+
+    <appender name="smsLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/sms/sms_record.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="statisticLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/statistic.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n"/>
+        </layout>
+    </appender>
+
+    <!--验证码的log-->
+    <appender name="captchaAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/captcha.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n[%d{yyyy-MM-dd HH:mm:ss.SSS}]==>%l[%t]%n"/>
+        </layout>
+    </appender>
+
+    <appender name="maintainerLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/maintainer.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n[%d{yyyy-MM-dd HH:mm:ss.SSS}]==>%l[%t]%n"/>
+        </layout>
+    </appender>
+
+    <!--性能log-->
+    <appender name="performanceAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/performance.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss}]:%m"/>
+        </layout>
+    </appender>
+
+    <appender name="searchLogAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/search.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n"/>
+        </layout>
+    </appender>
+
+
+    <appender name="paymentRecordAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/purchase/payment_record.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="paymentAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/purchase/payment.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="quartzJobAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/quartz_job.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS}]%-5p:%m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="statistic" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="statisticLogAppender"/>
+    </logger>
+
+    <logger name="judge" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="judgeLogAppender"/>
+    </logger>
+
+    <logger name="maintainer" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="maintainerLogAppender"/>
+    </logger>
+
+    <logger name="spartaInfo" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="spartaInfoLogAppender"/>
+    </logger>
+
+    <logger name="com.wenyibi.futuremail" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="spartaLogAppender"/>
+    </logger>
+
+    <logger name="com.wenyibi.futuremail.service.captcha" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="captchaAppender"/>
+    </logger>
+
+    <logger name="sparta-performance" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="performanceAppender"/>
+    </logger>
+
+    <logger name="search" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="searchLogAppender"/>
+    </logger>
+
+    <logger name="paymentRecordLogger" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="paymentRecordAppender"/>
+    </logger>
+
+    <logger name="smsRecordLogger" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="smsLogAppender"/>
+    </logger>
+
+    <logger name="com.wenyibi.futuremail.controllers.payment" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="paymentAppender"/>
+    </logger>
+
+    <logger name="com.wenyibi.futuremail.job" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="quartzJobAppender"/>
+    </logger>
+
+    <logger name="net.paoding.rose" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="roseLogAppender"/>
+    </logger>
+
+    <root>
+        <level value="error"/>
+        <appender-ref ref="rootLogAppender"/>
+    </root>
+</log4j:configuration>
