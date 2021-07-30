@@ -82,6 +82,13 @@
             <artifactId>httpclient</artifactId>
             <version>4.4.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
         <!--<dependency>-->
         <!--<groupId>com.microsoft.sqlserver</groupId>-->
         <!--<artifactId>sqljdbc4</artifactId>-->
